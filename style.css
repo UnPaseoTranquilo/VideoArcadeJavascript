@@ -1,0 +1,135 @@
+#main {
+    position: fixed;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+body {
+    background-image: url("media/pleyades_2.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-repeat: repeat-y;
+    background-color: black;
+    animation-name: sky-scroller;
+    animation-duration: 10000ms;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-timing-function: linear;
+ }
+
+@keyframes sky-scroller{
+    0%{
+        background-position-y: 0%;
+    }
+
+    100%{
+        background-position-y: 100%;
+    }
+}
+
+
+.fighter,
+.bullet,
+.enemy {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transform: translateX(-50%);
+}
+
+.fighter{
+    top: 85%;
+    width: 100px;
+    height: 95px;
+    background-image: url("media/Space-Fighter.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.new-fighter{
+    animation-name: newborn;
+    animation-duration: 100ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes newborn{
+    0%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.bullet{
+    width: 4px;
+    height: 10px;
+    background-color: white;
+    border: 0;
+}
+
+.enemy{
+    width: 60px;
+    height: 60px;
+    background-image: url("media/pitr-Planet-icon.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation-name: rotator;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes rotator{
+    0%{
+        transform: rotateZ(0deg);
+    }
+
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+
+.counter-lives,
+.counter-points,
+.counter-ratio{
+    position: fixed;
+    top: 50px;
+    font-size: 2em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.counter-lives{
+    left: 50px;
+}
+
+.counter-ratio{
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.counter-points{
+    right: 50px;
+}
+
+audio{
+    transform:  scale(0.5) translateX(-45%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
